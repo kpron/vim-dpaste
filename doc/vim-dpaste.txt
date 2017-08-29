@@ -1,0 +1,27 @@
+*vim-dpaste.txt* A short multi line description of your plugin
+
+===============================================================================
+CONTENTS                                                           *vim-dpaste*
+
+    1. Intro ............................................... |vim-dpaste-intro|
+    2. Requirements ................................. |vim-dpaste-requirements|
+    3. Usage ............................................... |vim-dpaste-usage|
+    4. Licence ........................................... |vim-dpaste-licence|
+===============================================================================
+1. Intro                                                     *vim-dpaste-intro*
+
+Overview of plugin
+
+2. Requirements                                       *vim-dpaste-requirements*
+
+What additional programs are required to run the plugin
+
+3. Usage                                                     *vim-dpaste-usage*
+
+How to use the plugin. What functions does it give the user?
+
+4. Licence                                                 *vim-dpaste-licence*
+
+This is open source make sure to include a licence
+
+vim:ft=help
