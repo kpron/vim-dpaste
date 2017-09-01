@@ -1,25 +1,28 @@
 " --------------------------------
-" Add our plugin to the path
-" --------------------------------
-python import sys
-python import vim
-python sys.path.append(vim.eval('expand("<sfile>:h")'))
-
-" --------------------------------
 "  Function(s)
 " --------------------------------
-function! TemplateExample()
-python << endOfPython
 
-from vim_dpaste import vim_dpaste_example
+function! GetVisual() range 
+        let reg_save = getreg('"') 
+        let regtype_save = getregtype('"') 
+        let cb_save = &clipboard 
+        set clipboard& 
+        normal! ""gvy 
+        let selection = getreg('"') 
+        call setreg('"', reg_save, regtype_save) 
+        let &clipboard = cb_save 
+        return selection 
+endfunction 
 
-for n in range(5):
-    print(vim_dpaste_example())
 
-endOfPython
+function! PostSnippet() range
+    let a:content = GetVisual()
+    let resp = system("curl -F 'content=".a:content."' https://dpaste.de/api/")
+    let s:uri = matchstr(resp, '"[a-z]*:\/\/[^ >,;]*"')
+    echom s:uri
 endfunction
 
 " --------------------------------
 "  Expose our commands to the user
 " --------------------------------
-command! Example call TemplateExample()
+command! -range Dpaste call PostSnippet()
