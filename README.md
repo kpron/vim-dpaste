@@ -16,7 +16,9 @@ Use your plugin manager of choice.
   - Add `Plug 'https://github.com/kpron/vim-dpaste'` to .vimrc
   - Run `:PlugInstall`
 
-## Todo
 
-1. Write a plugin
-2. Write documentation
+## Usage
+
+1. Use visual mode for select text.
+2. Call `:Dpaste` command for save paste to [dpaste](https://dpaste.de) service.
+3. Get snippet url from bottom of the window.
