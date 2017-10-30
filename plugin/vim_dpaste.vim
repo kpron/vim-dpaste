@@ -17,7 +17,8 @@ endfunction
 
 function! PostSnippet() range
     let a:content = GetVisual()
-    let resp = system("curl -F 'content=".a:content."' https://dpaste.de/api/")
+    let a:paste_url = get(g:, 'dpaste_url', "https://dpaste.de/api/")
+    let resp = system("curl -F 'content=".a:content."' ".a:paste_url."")
     let s:uri = matchstr(resp, '"[a-z]*:\/\/[^ >,;]*"')
     echom s:uri
 endfunction

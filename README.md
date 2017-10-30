@@ -22,3 +22,11 @@ Use your plugin manager of choice.
 1. Use visual mode for select text.
 2. Call `:Dpaste` command for save paste to [dpaste](https://dpaste.de) service.
 3. Get snippet url from bottom of the window.
+
+## Parameters
+
+- You can redefine paste url (if you have your own dpaste instanse) by putting this line to vimrc file:
+    ```
+    " vim-dpaste params
+    let g:dpaste_url = "http://my_own_dpaste.hot/api/"
+    ```
